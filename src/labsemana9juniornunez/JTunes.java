@@ -19,13 +19,13 @@ public class JTunes {
         
     }
 
-    // Añadir una canción al arreglo si el código es único
+    // Añadir una cancion al arreglo si el codigo es unico
     public boolean addSong(int codigo, String nombre, double precio) {
         if (searchSong(codigo) != null) {
             return false;
         }
 
-        // Buscar una posición libre en el arreglo
+        // Buscar una posicion libre en el arreglo
         for (int i = 0; i < maxCanciones; i++) {
             if (canciones[i] == null) {
                 canciones[i] = new Song(codigo, nombre, precio);
@@ -37,17 +37,17 @@ public class JTunes {
         return false;
     }
 
-    // Buscar una canción por su código
+    // Buscar una cancion por su codigo
     public Song searchSong(int codigo) {
         for (Song song : canciones) {
             if (song != null && song.getCode() == codigo) {
                 return song;
             }
         }
-        return null; // Retornar null si no se encuentra la canción
+        return null; // Retornar null si no se encuentra la cancion
     }
 
-    // Calificar una canción existente
+    // Calificar una cancion existente
     public boolean rateSong(int codigo, int estrellas) {
         Song song = searchSong(codigo);
         if (song != null) {
